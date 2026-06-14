@@ -4,6 +4,30 @@
 
 @layer base {
     body {
-        @apply bg-[#06202A] text-gray-300
+        @apply bg-[#07151d] text-gray-300 antialiased;
+        background-image:
+          radial-gradient(circle at 15% 0%, rgba(28, 231, 131, 0.08), transparent 28rem),
+          radial-gradient(circle at 90% 20%, rgba(44, 110, 140, 0.12), transparent 30rem);
+        background-attachment: fixed;
     }
+}
+
+.loading-bar {
+  width: 35%;
+  animation: loading-bar 1s ease-in-out infinite;
+}
+
+.text-clamp-1,
+.text-clamp-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.text-clamp-1 { -webkit-line-clamp: 1; }
+.text-clamp-2 { -webkit-line-clamp: 2; }
+
+@keyframes loading-bar {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(400%); }
 }
